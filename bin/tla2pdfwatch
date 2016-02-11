@@ -1,0 +1,2 @@
+#!/bin/sh
+fswatch . | grep --line-buffered '\.tla' | xargs -n 1 tla2pdf

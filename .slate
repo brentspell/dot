@@ -1,0 +1,129 @@
+# https://github.com/jigish/slate
+
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+config secondsBetweenRepeat 0.1
+config checkDefaultsOnLoad true
+
+alias left   move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
+alias right  move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+alias left34 move screenOriginX;screenOriginY (screenSizeX/4)*3;screenSizeY
+alias right34 move screenOriginX+screenSizeX/4;screenOriginY (screenSizeX/4)*3;screenSizeY
+alias top    move screenOriginX;screenOriginY screenSizeX;screenSizeY/2
+alias bottom move screenOriginX;screenOriginY+screenSizeY/2 screenSizeX;screenSizeY/2
+alias max    move screenOriginX;screenOriginY screenSizeX;screenSizeY
+alias center move screenOriginX+screenSizeX/4;screenOriginY screenSizeX/2;screenSizeY
+alias center23 move screenOriginX+screenSizeX/6;screenOriginY (screenSizeX/3)*2;screenSizeY
+alias visibile move screenSizeX+screenOriginY; screenSizeX;screenSizeY
+
+alias emacs 'Emacs':REPEAT ${max}
+alias safari 'Safari':REPEAT ${max}
+alias chrome 'Google Chrome':REPEAT ${center23}
+alias chromax 'Google Chrome':REPEAT ${max}
+alias terminal 'Terminal':REPEAT ${top}
+alias iterm 'iTerm':REPEAT ${top}
+
+alias mbpro 1280x800
+alias 27in 2560x1440
+# alias air11 1366x768
+# alias samsung 1920x1080
+alias air11 0
+alias samsung 1
+
+## ----------------------------------------
+
+layout ot2 ${emacs} ${27in}
+layout ot2 ${safari} ${27in}
+layout ot2 ${chrome} ${27in}
+layout ot2 ${terminal} ${27in}
+layout ot2 ${iterm} ${27in}
+layout ot2 'HipChat' ${right34} ${mbpro}
+layout ot2 'Messages' ${right34} ${mbpro}
+# layout ot2 'HipChat' ${max} ${mbpro}
+default ot2 resolutions:${27in};${mbpro}
+
+## ----------------------------------------
+
+layout hm2 ${emacs} ${samsung}
+layout hm2 ${safari} ${samsung}
+layout hm2 ${chrome} ${samsung}
+layout hm2 ${terminal} ${samsung}
+layout hm2 ${iterm} ${samsung}
+layout hm2 'HipChat' ${max} ${air11}
+layout hm2 'Messages' ${max} ${air11}
+# default hm2 resolutions:${air11};${samsung}
+default hm2 count:2
+
+## ----------------------------------------
+
+layout one ${emacs} 0
+layout one ${safari} 0
+layout one ${chromax} 0
+layout one ${terminal} 0
+layout one ${iterm} 0
+layout one 'HipChat' ${max} 0
+layout one 'Messages' ${max} 0
+default one count:1
+
+## ----------------------------------------
+
+layout read 'Emacs':REPEAT ${left}
+layout read 'Safari':REPEAT ${right}
+layout read 'Google Chrome':REPEAT ${right}
+layout hack 'Emacs':REPEAT ${max}
+layout hack 'Safari':REPEAT ${max}
+layout hack ${chrome}
+
+bind r:ctrl,alt,cmd layout read
+bind s:ctrl,alt,cmd layout read
+bind h:ctrl,alt,cmd layout hack
+bind u:ctrl,alt,cmd layout hack
+
+bind left:ctrl,alt,cmd ${left}
+bind right:ctrl,alt,cmd ${right}
+bind up:ctrl,alt,cmd ${top}
+bind down:ctrl,alt,cmd ${bottom}
+bind c:ctrl,alt,cmd ${center23}
+bind f:ctrl,alt,cmd ${max}
+bind tab:ctrl,alt,cmd throw next
+
+## ----------------------------------------
+## Quarters, which maybe I don't want?
+
+alias tl move screenOriginX;screenOriginY screenSizeX/2;screenSizeY/2
+alias tr move screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY/2
+alias bl move screenOriginX;screenSizeY/2 screenSizeX/2;screenSizeY/2
+alias br move screenSizeX/2;screenSizeY/2 screenSizeX/2;screenSizeY/2
+bind 1:ctrl,alt,cmd ${tl}
+bind 2:ctrl,alt,cmd ${tr}
+bind 3:ctrl,alt,cmd ${br}
+bind 4:ctrl,alt,cmd ${bl}
+
+# Focus Bindings
+bind right:alt,cmd    focus right
+bind left:alt,cmd     focus left
+#bind up:cmd       focus up
+#bind down:cmd     focus down
+#bind up:cmd;alt   focus behind
+#bind down:cmd;alt focus behind
+
+# Push Bindings
+#bind right:ctrl;alt;cmd  push right bar-resize:screenSizeX/3
+#bind left:ctrl;alt;cmd   push left  bar-resize:screenSizeX/3
+#bind up:ctrl;cmd     push up    bar-resize:screenSizeY/2
+#bind down:ctrl;cmd   push down  bar-resize:screenSizeY/2
+
+# Throw Bindings
+bind 1:ctrl;cmd         throw 0 resize
+bind 2:ctrl;cmd         throw 1 resize
+bind 3:ctrl;cmd         throw 2 resize
+bind right:ctrl;cmd     throw  right resize
+bind left:ctrl;cmd      throw  left  resize
+#bind up:ctrl;alt;cmd     throw up    resize
+#bind down:ctrl;alt;cmd   throw down  resize
+
+# Local Variables:
+# mode: conf-unix
+# End:
+

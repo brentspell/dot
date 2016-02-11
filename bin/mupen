@@ -1,0 +1,2 @@
+#!/bin/sh
+~/roms/mupen64plus2.5/run_rice.sh $@

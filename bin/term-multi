@@ -1,0 +1,25 @@
+#!/bin/bash
+# term-multi
+# D.Kovalov
+# Based on http://linuxpixies.blogspot.jp/2011/06/tmux-copy-mode-and-how-to-control.html
+
+# a script to multi-pane a terminal window
+
+
+starttmux() {
+   if [ -z "$COUNT" ]; then
+     COUNT=6
+   fi
+
+   tmux new-window -n wnd bash
+   for i in $(seq $((COUNT-1))); do
+      tmux split-window -t wnd -h bash
+   done
+   tmux select-layout -t wnd tiled > /dev/null
+   tmux set-window-option -t wnd synchronize-panes on > /dev/null
+   tmux select-pane -t 0
+}
+
+COUNT=${COUNT:=$*}
+
+starttmux

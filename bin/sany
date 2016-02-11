@@ -1,0 +1,3 @@
+#!/bin/sh
+dir=`dirname $0`
+java -cp $dir/tla2tools.jar tla2sany.SANY $@

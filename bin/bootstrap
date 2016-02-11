@@ -1,0 +1,5 @@
+from=$1
+to=$2
+curl http://$from/peer/sync > /Users/bspell/tmp/bootstrap
+curl -X PUT -H "Content-Type: application/edn" -d @/Users/bspell/tmp/bootstrap http://$to/peer/sync
+echo

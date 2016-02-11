@@ -1,0 +1,27 @@
+#!/bin/sh
+tmp=/tmp/homebrew-init-$$
+curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install > $tmp && \
+    ruby $tmp
+
+brew install ghostscript
+brew install imagemagick
+brew install emacs --cocoa --with-gnutls
+
+brew install \
+aspell \
+awscli \
+ctags \
+gpg \
+gpg2 \
+html2text \
+jq \
+markdown \
+msmtp \
+offline-imap \
+postgresql \
+redis \
+terminal-notifier \
+tmux \
+wget
+
+EMACS=/usr/local/bin/emacs brew install mu --with-emacs

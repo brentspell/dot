@@ -1,0 +1,4 @@
+#!/bin/sh
+mkdir -p target
+tla2tex -ps -metadir ./target -psCommand dvipdf -shade -ptSize 12 -textheight 650 -hoffset 15 -voffset -60 $@
+rm ${1%.tla}.dvi
