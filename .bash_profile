@@ -13,3 +13,4 @@ alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 alias tar='gtar'
 alias octave='octave --no-gui'
 alias ll='ls -l'
+alias lla='ls -lA'

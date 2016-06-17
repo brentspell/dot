@@ -16,5 +16,11 @@
 .zshenv
 .zshrc
 .npmrc
+.dbshell
+.viminfo
+.lesshst
+.mongorc.js
+.mysql_history
+.node_repl_history
 
 !bin
