@@ -22,5 +22,6 @@
 .mongorc.js
 .mysql_history
 .node_repl_history
+sublime
 
 !bin

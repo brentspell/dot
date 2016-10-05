@@ -9,8 +9,5 @@ export DOCKER_HOST="tcp://192.168.99.102:2376"
 export DOCKER_CERT_PATH="/Users/bspell/.docker/machine/machines/default"
 export DOCKER_MACHINE_NAME="default"
 
-alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
-alias tar='gtar'
-alias octave='octave --no-gui'
-alias ll='ls -l'
-alias lla='ls -lA'
+export ENV=~/.bashrc
+if [ -f $ENV ]; then . $ENV; fi
