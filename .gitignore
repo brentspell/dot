@@ -22,6 +22,10 @@
 .mongorc.js
 .mysql_history
 .node_repl_history
+.DS_Store
 sublime
 
 !bin
+!.lein
+
+.lein/init.clj
