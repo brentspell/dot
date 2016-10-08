@@ -22,8 +22,11 @@
 [push]
 	default = simple
 [user]
-	email = bspell@opentable.com
+	email = bspell1@gmail.com
+	name = Brent M. Spell
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
 	required = true
+[commit]
+	gpgsign = true

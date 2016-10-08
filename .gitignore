@@ -23,6 +23,8 @@
 .mysql_history
 .node_repl_history
 .DS_Store
+.julia_history
+.lein/repl-history
 sublime
 
 !bin
