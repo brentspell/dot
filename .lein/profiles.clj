@@ -29,10 +29,5 @@
   :jvm-opts
   ["-Xverify:none"]
 
- :auth
- {:repository-auth {#"http://artifactory.otenv.com:8081/artifactory/internal"
-                    {:username "build"
-                     :password "\\{DESede\\}CRPWQ7yFOKIC5qHtkYKcoA=="}}}
-
  :test-refresh
  {:quiet true}}}
