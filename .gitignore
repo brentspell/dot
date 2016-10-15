@@ -25,6 +25,7 @@
 .DS_Store
 .julia_history
 .lein/repl-history
+.python_history
 sublime
 
 !bin
