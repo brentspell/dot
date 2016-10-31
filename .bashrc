@@ -3,6 +3,11 @@ export IP=`ifconfig | grep 'inet ' | grep -v 127\.0\.0\.1 | sed -r 's|[^0-9.]*([
 export PS1="\\w> "
 export PYTHONSTARTUP=~/.pythonrc.py
 
+# cuda variables
+export CUDA_HOME=/usr/local/cuda
+export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:$CUDA_HOME/lib"
+export PATH="$CUDA_HOME/bin:$PATH"
+
 alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 alias tar='gtar'
 alias octave='octave --no-gui'
