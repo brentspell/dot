@@ -5,7 +5,7 @@ export PYTHONSTARTUP=~/.pythonrc.py
 
 # cuda variables
 export CUDA_HOME=/usr/local/cuda
-export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:$CUDA_HOME/lib"
+export LD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:$CUDA_HOME/lib"
 export PATH="$CUDA_HOME/bin:$PATH"
 
 alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
