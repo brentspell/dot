@@ -27,6 +27,15 @@
 .lein/repl-history
 .python_history
 sublime
+.ICEauthority
+.bash_logout
+.dmrc
+.profile
+.sudo_as_admin_successful
+.xsession-errors
+.xsession-errors.old
+examples.desktop
+
 
 !bin
 !.lein

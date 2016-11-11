@@ -11,3 +11,5 @@ export DOCKER_MACHINE_NAME="default"
 
 export ENV=~/.bashrc
 if [ -f $ENV ]; then . $ENV; fi
+
+if [ -f ~/.keychain/ubrontu-sh ]; then source ~/.keychain/ubrontu-sh; fi
