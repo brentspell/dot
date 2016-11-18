@@ -26,6 +26,7 @@
 .julia_history
 .lein/repl-history
 .python_history
+.sqlite_history
 sublime
 .ICEauthority
 .bash_logout
