@@ -4,7 +4,7 @@ export PS1="\h:\\w> "
 export PYTHONSTARTUP=~/.pythonrc.py
 export HISTFILESIZE=
 export HISTSIZE=
-export PROMPT_COMMAND="$PROMPT_COMMAND;history -a"
+export PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
 shopt -s histappend
 
