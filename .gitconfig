@@ -24,6 +24,7 @@
 [user]
 	email = bspell1@gmail.com
 	name = Brent M. Spell
+	signingkey = 8713F920
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
