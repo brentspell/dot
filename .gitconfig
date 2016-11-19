@@ -20,7 +20,7 @@
 	renames = copies
 
 [push]
-	default = simple
+	default = current
 [user]
 	email = bspell1@gmail.com
 	name = Brent M. Spell
