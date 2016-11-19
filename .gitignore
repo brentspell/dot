@@ -36,6 +36,7 @@ sublime
 .xsession-errors
 .xsession-errors.old
 examples.desktop
+pistore.desktop
 
 
 !bin
