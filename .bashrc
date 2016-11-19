@@ -11,3 +11,5 @@ shopt -s histappend
 alias octave='octave --no-gui'
 alias ll='ls -l'
 alias lla='ls -lA'
+
+if [ -f /Applications/VLC.app/Contents/MacOS/VLC ]; then alias vlc='/Applications/VLC.app/Contents/MacOS/VLC -I rc'; fi
