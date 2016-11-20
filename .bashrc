@@ -9,7 +9,7 @@ export PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 shopt -s histappend
 
 alias octave='octave --no-gui'
-alias ll='ls -l'
-alias lla='ls -lA'
+alias ll='ls -lh'
+alias lla='ls -lhA'
 
 if [ -f /Applications/VLC.app/Contents/MacOS/VLC ]; then alias vlc='/Applications/VLC.app/Contents/MacOS/VLC -I rc'; fi
