@@ -43,3 +43,7 @@ pistore.desktop
 !.lein
 
 .lein/init.clj
+
+!.ssh
+.ssh/*
+!.ssh/authorized_keys
