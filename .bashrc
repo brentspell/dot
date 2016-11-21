@@ -5,11 +5,15 @@ export PYTHONSTARTUP=~/.pythonrc.py
 export HISTFILESIZE=
 export HISTSIZE=
 export PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+export CLICOLOR=1
 
 shopt -s histappend
 
 alias octave='octave --no-gui'
+alias ls='ls --color --group-directories-first'
 alias ll='ls -lh'
 alias lla='ls -lhA'
+alias grep='grep --color'
+alias watch='watch --color'
 
 if [ -f /Applications/VLC.app/Contents/MacOS/VLC ]; then alias vlc='/Applications/VLC.app/Contents/MacOS/VLC -I rc'; fi
