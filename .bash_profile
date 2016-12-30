@@ -8,3 +8,8 @@ export ENV=~/.bashrc
 if [ -f $ENV ]; then . $ENV; fi
 
 if [ -f ~/.keychain/$HOSTNAME-sh ]; then source ~/.keychain/$HOSTNAME-sh; fi
+
+if type pyenv >/dev/null; then
+   eval "$(pyenv init -)"
+   eval "$(pyenv virtualenv-init -)"
+fi
