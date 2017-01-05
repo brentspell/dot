@@ -2,7 +2,6 @@ export PATH=/usr/local/opt/coreutils/libexec/gnubin:~/bin:$PATH
 export IP=`ifconfig | grep 'inet ' | grep -v 127\.0\.0\.1 | sed -r 's|[^0-9.]*([^ ]*) .*|\1|' | tail -n 1`
 export HISTCONTROL=ignoredups
 export GPG_TTY=$(tty)
-export R_HOME=/Library/Frameworks/R.framework/Resources
 
 export ENV=~/.bashrc
 if [ -f $ENV ]; then . $ENV; fi
