@@ -6,6 +6,11 @@ export GPG_TTY=$(tty)
 export ENV=~/.bashrc
 if [ -f $ENV ]; then . $ENV; fi
 
+if [ -d ~/.pyenv/bin ]; then
+   export PYENV_ROOT=~/.pyenv
+   export PATH=$PYENV_ROOT/bin:$PATH
+fi
+
 if type pyenv > /dev/null 2>&1; then
    eval "$(pyenv init -)"
    eval "$(pyenv virtualenv-init -)"
