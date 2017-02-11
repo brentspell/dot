@@ -16,3 +16,24 @@ try:
     mpl.rcParams['interactive'] = True
 except:
     pass
+
+
+def django_init(settings_module):
+    from django.core.management import execute_from_command_line
+
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE',
+                          '{}.settings'.format(settings_module))
+    execute_from_command_line(['.', 'shell'])
+
+
+try:
+    from IPython import get_ipython
+    from IPython.terminal.prompts import Prompts, Token
+
+    class MyPrompt(Prompts):
+        def in_prompt_tokens(self, cli=None):
+            return [(Token.Prompt, '> ')]
+
+    get_ipython().prompts = MyPrompt(get_ipython())
+except:
+    pass
