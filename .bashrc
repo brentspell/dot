@@ -7,12 +7,19 @@ export HISTFILESIZE=
 export HISTSIZE=
 export PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 export CLICOLOR=1
+export PYSPARK_DRIVER_PYTHON='jupyter'
+export PYSPARK_DRIVER_PYTHON_OPTS='notebook'
 
 shopt -s histappend
 
 alias octave='octave --no-gui'
+alias clear="clear && printf '\e[3J'"
 alias ls='ls --color --group-directories-first'
 alias ll='ls -lh'
 alias lla='ls -lhA'
+alias lsd='ls -d'
+alias du='du -h'
 alias grep='grep --color'
 alias watch='watch --color'
+alias pytest='python -m pytest'
+alias ptw='PYTHONPATH=. ptw'

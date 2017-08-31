@@ -1,5 +1,6 @@
 import os
 import sys
+import importlib
 
 # locate the project root for repl projects
 p = os.getcwd()

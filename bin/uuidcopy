@@ -1,0 +1,3 @@
+#!/bin/sh
+
+uuidgen | tr '[:upper:]' '[:lower:]' | tr -t '\n' ' ' | sed -r 's/ //' | pbcopy

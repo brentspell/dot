@@ -1,0 +1,19 @@
+#!/bin/sh
+
+trap ctrl_c INT
+
+function ctrl_c() {
+   exit 0
+}
+
+clear && printf '\e[3J'
+date
+$*
+
+while true
+do
+   fswatch -1 .
+   clear && printf '\e[3J'
+   date
+   $*
+done

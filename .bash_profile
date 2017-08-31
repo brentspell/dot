@@ -23,3 +23,10 @@ fi
 if [ -f ~/.keychain/$HOSTNAME-sh ]; then
    source ~/.keychain/$HOSTNAME-sh;
 fi
+
+if type hadoop > /dev/null 2>&1; then
+   export HADOOP_LIBEXEC_DIR="$HADOOP_HOME"/libexec
+   export SPARK_DIST_CLASSPATH=$(hadoop classpath)
+fi
+
+export PATH="$HOME/.cargo/bin:$PATH"

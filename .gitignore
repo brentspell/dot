@@ -9,6 +9,8 @@
 .bash_history
 .coffee_history
 .jslint.conf
+.psql_history*
+.python_history*
 .octave_hist
 .psql_history
 .rediscli_history
@@ -35,6 +37,10 @@ sublime
 .sudo_as_admin_successful
 .xsession-errors
 .xsession-errors.old
+.python_history
+.multirust
+.lmmsrc.xml
+.yarnrc
 examples.desktop
 pistore.desktop
 
