@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+
+git fetch
+git checkout master
+git merge
+git checkout integration
+git merge
+git merge master --no-ff -m 'merge master'
+git push
+git checkout master

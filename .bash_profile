@@ -1,4 +1,4 @@
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:~/bin:$PATH
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:~/bin:~/.mix/escripts:/usr/local/cuda/bin:$PATH
 export IP=`ifconfig | grep 'inet ' | grep -v 127\.0\.0\.1 | sed -r 's|[^0-9.]*([^ ]*) .*|\1|' | tail -n 1`
 export HISTCONTROL=ignoredups
 export GPG_TTY=$(tty)
@@ -27,6 +27,10 @@ fi
 if type hadoop > /dev/null 2>&1; then
    export HADOOP_LIBEXEC_DIR="$HADOOP_HOME"/libexec
    export SPARK_DIST_CLASSPATH=$(hadoop classpath)
+fi
+
+if [ -f /usr/local/etc/profile.d/autojump.sh ]; then
+      . /usr/local/etc/profile.d/autojump.sh
 fi
 
 export PATH="$HOME/.cargo/bin:$PATH"

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+tmux new-session -d -s mon
+tmux send-keys 'watch -n 1 nvidia-smi' 'C-m'
+tmux rename-window 'mon'
+tmux select-window -t mon:0
+tmux split-window -h
+tmux send-keys 'sudo htop' 'C-m'
+tmux split-window -v -t 0
+tmux send-keys 'watch -n 1 sensors' 'C-m'
+tmux split-window -v -t 1
+tmux send-keys 'tail -F /var/log/syslog' 'C-m'
+tmux -2 attach-session -t mon

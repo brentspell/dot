@@ -15,6 +15,12 @@
 	fetch-pulls = "!f(){ set -x; git fetch \"$1\" \"+refs/pull/*/head:refs/remotes/$1/pull/*\";};f"
 	fetch-backups = "!f(){ b=${2:-${GIT_USER:-$USER}}; set -x; git fetch \"$1\" \"+refs/remotes/$b/*:refs/remotes/$1/$b/*\";};f"
 	branch-clean = "!f(){ set -x; git branch -d \"$1\" && git push origin :\"$1\";};f"
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit
+  st = status -sb
+  ci = commit
+  co = checkout
+  br = branch
+  pf = push --force-with-lease
 
 [diff]
 	renames = copies

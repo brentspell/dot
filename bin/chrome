@@ -1,1 +1,1 @@
-/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome $@
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome $@ 1>&2 2>&1 > /dev/null

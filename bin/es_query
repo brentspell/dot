@@ -1,0 +1,89 @@
+#!/bin/bash
+
+QUERY="widow"
+
+#(curl http://localhost:9200/pylon-bartender/recipe/_search \
+(curl https://search-pylon-integration-em44rjw2lp2ufxtjsbx7td642e.us-east-1.es.amazonaws.com/pylon-bartender/recipe/_search \
+-d @- << BODY
+{
+   "query": {
+     "bool": {
+      "should": [
+         {"match": {"brands": {"query": "$QUERY", "boost": 3}}},
+         {"match": {"title": {"query": "$QUERY", "boost": 2}}},
+         {"match": {"title.english": {"query": "$QUERY", "boost": 2}}},
+         {"match": {"main_ingredients": {"query": "$QUERY"}}}
+       ],
+       "filter": [
+         {"term": {"source": "liquor.com"}}
+       ]
+     }
+   },
+   "size": 5,
+   "min_score": 1
+}
+BODY
+) | jq .
+
+#curl -X POST -H "Content-Type: application/json" \
+#   https://search-pylon-integration-em44rjw2lp2ufxtjsbx7td642e.us-east-1.es.amazonaws.com/pylon-browncow-source-v1/wikihow/_count \
+#   -d @- << BODY
+#   {
+#      "query": {
+#         "bool": {
+#            "filter": {
+#               "exists": {
+#                  "field": "scraped"
+#               }
+#            }
+#         }
+#      }
+#   }
+#BODY
+
+# "term": { "title": "Activate Emoji Keyboard with the App Emoji Emotexts Emoticons All in 1 Text Messaging Tool" }
+
+#(curl https://search-pylon-integration-em44rjw2lp2ufxtjsbx7td642e.us-east-1.es.amazonaws.com/pylon-browncow/howto/_search \
+#   -d @- << BODY
+#   {
+#    "_source": ["title"],
+#    "query": {
+#      "bool": {
+#        "must": {
+#          "function_score": {
+#            "functions": [{"random_score": {}}]
+#          }
+#        }
+#      }
+#    },
+#    "size": 1000
+#  }
+#BODY
+#) | jq -r ".hits.hits[] | ._source.title" | pbcopy
+
+
+#curl -X POST -H "Content-Type: application/json" \
+#   https://search-pylon-integration-em44rjw2lp2ufxtjsbx7td642e.us-east-1.es.amazonaws.com/_reindex \
+#   -d @- << BODY
+#   {
+#      "source": { "index": "pylon-browncow-source-v1" },
+#      "dest": { "index": "pylon-browncow-source-v1" }
+#   }
+#BODY
+
+
+#(curl http://localhost:9200/pylon-bartender/recipe/_search \
+#   -d @- << BODY
+#{
+#    "aggs" : {
+#        "category_count" : {
+#            "terms" : {
+#                "field" : "main_ingredients.keyword",
+#                "size": 2147483647
+#            }
+#        }
+#    },
+#    "size": 0
+#}
+#BODY
+#) | jq .

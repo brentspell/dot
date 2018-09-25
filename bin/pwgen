@@ -1,0 +1,5 @@
+#!/bin/bash
+
+base_path=$(dirname $0)
+
+~/.pyenv/versions/3.7.0/bin/python $base_path/pwgen.py | pbcopy

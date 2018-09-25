@@ -9,6 +9,7 @@ export PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 export CLICOLOR=1
 export PYSPARK_DRIVER_PYTHON='jupyter'
 export PYSPARK_DRIVER_PYTHON_OPTS='notebook'
+export TF_CPP_MIN_LOG_LEVEL=3
 
 shopt -s histappend
 
@@ -25,3 +26,5 @@ alias watch='watch --color'
 alias pytest='python -m pytest'
 alias ptw='PYTHONPATH=. ptw'
 alias make='make -s'
+alias avp='aws-vault exec PYLON_USER -- '
+alias eb='~/.pyenv/versions/awsebcli/bin/eb'

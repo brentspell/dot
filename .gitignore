@@ -6,14 +6,9 @@
 .account
 .anyconnect
 .babel.json
-.bash_history
-.coffee_history
+.*_history*
 .jslint.conf
-.psql_history*
-.python_history*
 .octave_hist
-.psql_history
-.rediscli_history
 .rnd
 .zshenv
 .zshrc
@@ -22,13 +17,7 @@
 .viminfo
 .lesshst
 .mongorc.js
-.mysql_history
-.node_repl_history
 .DS_Store
-.julia_history
-.lein/repl-history
-.python_history
-.sqlite_history
 sublime
 .ICEauthority
 .bash_logout
@@ -37,13 +26,13 @@ sublime
 .sudo_as_admin_successful
 .xsession-errors
 .xsession-errors.old
-.python_history
 .multirust
 .lmmsrc.xml
 .yarnrc
+.erlang.cookie
 examples.desktop
 pistore.desktop
-
+.emulator_console_auth_token
 
 !bin
 !.lein
@@ -53,3 +42,6 @@ pistore.desktop
 !.ssh
 .ssh/*
 !.ssh/authorized_keys
+
+!.config
+!.config/htop
