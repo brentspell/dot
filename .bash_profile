@@ -1,5 +1,4 @@
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:~/bin:~/.mix/escripts:/usr/local/cuda/bin:$PATH
-export IP=`ifconfig | grep 'inet ' | grep -v 127\.0\.0\.1 | sed -r 's|[^0-9.]*([^ ]*) .*|\1|' | tail -n 1`
 export HISTCONTROL=ignoredups
 export GPG_TTY=$(tty)
 

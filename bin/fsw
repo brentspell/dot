@@ -12,7 +12,7 @@ bash -c "$*"
 
 while true
 do
-   fswatch --latency 0.5 -1 .
+   timeout --foreground 1h fswatch --recursive --latency 0.5 -1 .
    clear && printf '\e[3J'
    date
    bash -c "$*"
