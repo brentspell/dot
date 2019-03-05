@@ -1,0 +1,5 @@
+#!/bin/bash
+
+tmux new-session -s gpu$1 \; \
+  setenv CUDA_VISIBLE_DEVICES $1 \; \
+  send-keys -t 0 "export CUDA_VISIBLE_DEVICES="$1 C-m
